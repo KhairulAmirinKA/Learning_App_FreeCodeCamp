@@ -12,23 +12,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FreeCodeCampEg"
         tools:targetApi="31">
+
+        <!-- main activity dlm app -->
         <activity
-            android:name=".MainActivity"
+            android:name=".Register"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> <!-- main activity -->
 
-        <!-- registration form activity-->
-        <activity android:name=".Register" android:exported="true"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
 
-        <!-- learn ui-->
-        <activity android:name=".LearnUI" android:exported="true"></activity>
+        <!-- learn ui -->
 
+        <activity android:name=".LearnUI"
+            android:exported="true" />
 
+        <activity
+            android:name=".LearnButton_Text"
+            android:exported="true" />
     </application>
 
 </manifest>
