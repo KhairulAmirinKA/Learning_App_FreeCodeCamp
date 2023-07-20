@@ -30,12 +30,17 @@
 
         <!-- learn ui -->
 
-        <activity android:name=".LearnUI"
+        <activity android:name=".Learn_Radio_Checkbox"
             android:exported="true" />
 
         <activity
             android:name=".LearnButton_Text"
             android:exported="true" />
+
+        <activity android:name=".LearnLayout"
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>

@@ -4,10 +4,11 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LearnUI extends AppCompatActivity {
+public class LearnLayout extends AppCompatActivity {
+
     @Override  //starting point
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.learn_ui); //link dgn xml
+        setContentView(R.layout.relative_layout); //link dgn xml
     }
 }
