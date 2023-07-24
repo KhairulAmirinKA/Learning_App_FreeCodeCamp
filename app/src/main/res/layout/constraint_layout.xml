@@ -41,14 +41,15 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="@tools:sample/us_phones" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="108dp" />
+        app:layout_constraintGuide_begin="86dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -56,4 +57,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="90dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="95dp"
+        android:layout_height="96dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:srcCompat="@drawable/terkedu"
+        tools:srcCompat="@tools:sample/backgrounds/scenic[1]" />
 </androidx.constraintlayout.widget.ConstraintLayout>
