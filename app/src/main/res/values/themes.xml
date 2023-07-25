@@ -6,4 +6,15 @@
     </style>
 
     <style name="Theme.FreeCodeCampEg" parent="Base.Theme.FreeCodeCampEg" />
+
+
+    <style name="CustomizedAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="colorPrimary">@color/pink</item>
+        <item name="colorPrimaryDark">@color/purple</item>
+    </style>
+
+
+
+
 </resources>

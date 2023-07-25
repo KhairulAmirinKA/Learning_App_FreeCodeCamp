@@ -30,4 +30,6 @@ public class Register extends AppCompatActivity {
         txtEmail.setText("Email: "+ editEmail.getText().toString());
 
     }
+
+
 }

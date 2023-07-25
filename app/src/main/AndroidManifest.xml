@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FreeCodeCampEg"
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
         tools:targetApi="24">
 
         <!-- main activity dlm app -->
@@ -44,6 +44,12 @@
         <activity android:name=".LearnListView" android:exported="true"/>
 
         <activity android:name=".LearnSpinner" android:exported="true"/>
+
+        <activity android:name=".LearnXML" android:exported="true"/>
+
+
+
+
     </application>
 
 </manifest>
