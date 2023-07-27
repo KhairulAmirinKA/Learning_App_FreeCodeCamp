@@ -3,8 +3,11 @@ package com.example.freecodecampeg;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LearnXML extends AppCompatActivity {
@@ -35,6 +38,27 @@ public class LearnXML extends AppCompatActivity {
 
         return true;
 
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) { //select item
+
+        int id= item.getItemId();
+
+        if (id== R.id.settingsMenu){
+            Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+
+        else if (id==R.id.alarmMenu){
+            Toast.makeText(this, "Alarm selected", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+
+
+        else{
+        return super.onOptionsItemSelected(item); }
 
     }
 }
