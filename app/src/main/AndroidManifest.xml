@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+        android:theme="@style/AppTheme"
         tools:targetApi="24">
 
         <!-- main activity dlm app -->
@@ -48,6 +48,12 @@
         <activity android:name=".LearnXML" android:exported="true"/>
 
         <activity android:name=".LearnXML_2" android:exported="true" />
+
+        <activity android:name=".Learn_MaterialDesign" android:exported="true"/>
+
+        <activity android:name=".Learn_Snackbars" android:exported="true"/>
+
+        <activity android:name=".Learn_Recycler_View" android:exported="true"/>
 
 
 
