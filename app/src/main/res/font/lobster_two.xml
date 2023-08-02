@@ -3,8 +3,27 @@
 
     <font
         android:font="@font/lobster_two_regular"
-        android:fontWeight="400"
-        android:fontStyle="normal"/>
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+
+    <font
+        android:font="@font/lobster_two_italic"
+        android:fontStyle="italic"
+        android:fontWeight="400"/>
+
+    <font
+        android:font="@font/lobster_two_bold"
+        android:fontStyle="normal"
+        android:fontWeight="700"/>
+
+    <font
+        android:font="@font/lobster_two_bold_italic"
+        android:fontStyle="italic"
+        android:fontWeight="700"
+        />
+
+
+
 
 
 

@@ -60,6 +60,8 @@
 
         <activity android:name=".Learn_Font" android:exported="true" />
 
+        <activity android:name="Challenge.UI_Challenge1" android:exported="true"/>
+
 
 
 

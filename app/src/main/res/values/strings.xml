@@ -14,6 +14,15 @@
         <item>Iman</item>
     </string-array>
 
+    <!-- to use in spinner -->
+    <array name="countriesArr">
+        <item>Malaysia</item>
+        <item>Bangladesh</item>
+        <item>Spain</item>
+        <item>China</item>
+        <item>India</item>
+    </array>
+
     <string name="hello">Hello there</string>
 
     <string name="lorem_ipsum">
