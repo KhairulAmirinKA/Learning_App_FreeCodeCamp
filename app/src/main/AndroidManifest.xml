@@ -18,7 +18,7 @@
 
         <!-- main activity dlm app -->
         <activity
-            android:name=".Register"
+            android:name="Challenge.UI_Challenge1"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -60,7 +60,7 @@
 
         <activity android:name=".Learn_Font" android:exported="true" />
 
-        <activity android:name="Challenge.UI_Challenge1" android:exported="true"/>
+        <activity android:name=".Register" android:exported="true"/>
 
 
 
