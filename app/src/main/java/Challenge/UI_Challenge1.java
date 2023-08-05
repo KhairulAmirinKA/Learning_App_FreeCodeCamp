@@ -154,11 +154,40 @@ public class UI_Challenge1 extends AppCompatActivity {
         txtWarnPass.setVisibility(View.GONE);
         txtWarnRepeatPass.setVisibility(View.GONE);
 
+        //get user data
+        String name= editTxtName.getText().toString();
+        String email= editTxtEmail.getText().toString();
+        String country= spinnerCountry.getSelectedItem().toString();
+
+        String gender="";
+
+        int radioButtonId= rgGender.getCheckedRadioButtonId();
+
+        if (radioButtonId==R.id.rbMale){
+            gender= "Male";
+        }
+        else {
+            gender="Female";
+        }
+
+        //text in snack
+        String snackText=
+                String.format("Name: %s\n" +
+                        "Email: %s\n" +
+                        "Gender: %s\n" +
+                        "County: %s\n", name, email, gender, country);
+
+
+
         //snack bar
-        Snackbar.make(parent, "User registered", Snackbar.LENGTH_INDEFINITE)
+        Snackbar.make(parent, snackText, Snackbar.LENGTH_INDEFINITE)
                 .setAction("Dismiss", new View.OnClickListener() {
                     @Override
-                    public void onClick(View view) {
+                    public void onClick(View view) { //clear all the edit text after clicking Dismiss
+                        editTxtName.setText("");
+                        editTxtEmail.setText("");
+                        editTxtPassword.setText("");
+                        editTxtPassRepeat.setText("");
 
                     }
                 })

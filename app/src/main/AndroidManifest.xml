@@ -62,6 +62,10 @@
 
         <activity android:name=".Register" android:exported="true"/>
 
+        <activity android:name="LibraryProject.LIbraryApp" android:exported="true"/>
+
+        <activity android:name="LibraryProject.AllBooks_Activity" />
+
 
 
 
