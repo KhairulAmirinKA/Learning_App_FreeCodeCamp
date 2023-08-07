@@ -18,7 +18,7 @@
 
         <!-- main activity dlm app -->
         <activity
-            android:name="Challenge.UI_Challenge1"
+            android:name="LibraryProject.LIbraryApp"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,9 +62,9 @@
 
         <activity android:name=".Register" android:exported="true"/>
 
-        <activity android:name="LibraryProject.LIbraryApp" android:exported="true"/>
+        <activity android:name="Challenge.UI_Challenge1" android:exported="true"/>
 
-        <activity android:name="LibraryProject.AllBooks_Activity" />
+        <activity android:name="LibraryProject.AllBooks_Activity" android:exported="true"/>
 
 
 
