@@ -14,8 +14,9 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content">
 
-        <!-- rel layout containing the image -->
+        <!-- collapsed rel layout containing the image -->
         <RelativeLayout
+            android:id="@+id/collapsedRel_Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -32,15 +33,68 @@
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:layout_below="@+id/imgBook"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="7dp"
                 android:id="@+id/txtBookName"/>
+
+            <!-- down arrow-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_down_arrow"
+                android:layout_below="@+id/imgBook"
+                android:layout_marginTop="7dp"
+                android:id="@+id/btnDownArrow"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+        <!-- expanded version-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/collapsedRel_Layout"
+            android:id="@+id/expandedRel_Layout"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Author:"
+                android:id="@+id/authorText"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maria Kajiwa"
+                android:id="@+id/txtAuthor"
+                android:layout_below="@+id/authorText"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Short Description"
+                android:id="@+id/txtShortDesc"
+                android:layout_below="@+id/txtAuthor"
+                android:layout_marginTop="7dp"/>
+
+            <!-- add arrow-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_up_arrow"
+                android:layout_below="@+id/txtShortDesc"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/btnUpArrow"/>
+
 
         </RelativeLayout>
 
 
-    </RelativeLayout>
 
 
+
+
+
+</RelativeLayout>
 
 </com.google.android.material.card.MaterialCardView>

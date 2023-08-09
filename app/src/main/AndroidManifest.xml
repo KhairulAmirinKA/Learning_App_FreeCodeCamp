@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <!-- add permission-->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- add permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="24">
-
+        <activity
+            android:name="LibraryProject.BookActivity"
+            android:exported="false" />
         <!-- main activity dlm app -->
         <activity
             android:name="LibraryProject.LIbraryApp"
@@ -26,49 +27,51 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- main activity -->
-
         <activity
             android:name=".MainActivity"
+            android:exported="true" /> <!-- learn ui -->
+        <activity
+            android:name=".Learn_Radio_Checkbox"
             android:exported="true" />
-
-        <!-- learn ui -->
-
-        <activity android:name=".Learn_Radio_Checkbox"
-            android:exported="true" />
-
         <activity
             android:name=".LearnButton_Text"
             android:exported="true" />
-
-        <activity android:name=".LearnLayout"
-            android:exported="true">
-        </activity>
-
-        <activity android:name=".LearnListView" android:exported="true"/>
-
-        <activity android:name=".LearnSpinner" android:exported="true"/>
-
-        <activity android:name=".LearnXML" android:exported="true"/>
-
-        <activity android:name=".LearnXML_2" android:exported="true" />
-
-        <activity android:name=".Learn_MaterialDesign" android:exported="true"/>
-
-        <activity android:name=".Learn_Snackbars" android:exported="true"/>
-
-        <activity android:name=".Learn_Recycler_View" android:exported="true"/>
-
-        <activity android:name=".Learn_Font" android:exported="true" />
-
-        <activity android:name=".Register" android:exported="true"/>
-
-        <activity android:name="Challenge.UI_Challenge1" android:exported="true"/>
-
-        <activity android:name="LibraryProject.AllBooks_Activity" android:exported="true"/>
-
-
-
-
+        <activity
+            android:name=".LearnLayout"
+            android:exported="true"></activity>
+        <activity
+            android:name=".LearnListView"
+            android:exported="true" />
+        <activity
+            android:name=".LearnSpinner"
+            android:exported="true" />
+        <activity
+            android:name=".LearnXML"
+            android:exported="true" />
+        <activity
+            android:name=".LearnXML_2"
+            android:exported="true" />
+        <activity
+            android:name=".Learn_MaterialDesign"
+            android:exported="true" />
+        <activity
+            android:name=".Learn_Snackbars"
+            android:exported="true" />
+        <activity
+            android:name=".Learn_Recycler_View"
+            android:exported="true" />
+        <activity
+            android:name=".Learn_Font"
+            android:exported="true" />
+        <activity
+            android:name=".Register"
+            android:exported="true" />
+        <activity
+            android:name="Challenge.UI_Challenge1"
+            android:exported="true" />
+        <activity
+            android:name="LibraryProject.AllBooks_Activity"
+            android:exported="true" />
     </application>
 
 </manifest>
