@@ -1,7 +1,10 @@
 package LibraryProject;
 
+import static LibraryProject.BookActivity.BOOK_ID_KEY;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,6 +70,13 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
                 Toast.makeText(mContext,
                         bookArrayList.get(position).getName()+" selected",
                         Toast.LENGTH_SHORT).show();
+
+                Intent intent= new Intent(mContext, BookActivity.class); //when clicked, the details of the book will be displayed
+
+                //BOOK_ID_KEY = bookId. in the BookActivity.java
+                intent.putExtra(BOOK_ID_KEY, bookArrayList.get(position).getId() );
+
+                mContext.startActivity(intent);
             }
         });
 

@@ -2,6 +2,7 @@ package LibraryProject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,6 +12,9 @@ import com.bumptech.glide.Glide;
 import com.example.freecodecampeg.R;
 
 public class BookActivity extends AppCompatActivity {
+
+    //const keys - for safety
+    public static final String BOOK_ID_KEY= "bookId";
 
     private ImageView imgBook;
 
@@ -27,16 +31,39 @@ public class BookActivity extends AppCompatActivity {
         //init
         initViews();
 
-        //TODO: get data from recycler view
-        Book book=  new Book(1, "Lengloi", "Maria", 500,
-                "https://cdn-shop.ookbee.com/Books/KarangBooks/2016/20161336/Thumbnails/Cover.jpg",
-                "A horror book", "Long Desc") ;
-
-        setData(book);
 
 
+//        String longDesc= "Every person who opens a new shop will be haunted.\nWhat is the reason " +
+//                "of that mystery?\n" +
+//                "Can they survive?";
+//
+//        Book book=  new Book(1, "Lengloi", "Maria", 500,
+//                "https://cdn-shop.ookbee.com/Books/KarangBooks/2016/20161336/Thumbnails/Cover.jpg",
+//                "A horror book", longDesc) ;
 
-    }
+//TODO: get data from recycler view
+        //get data safely ffrom recycler view
+        Intent intent= getIntent();
+
+        if (intent!= null){ //1st check
+
+            int bookId= intent.getIntExtra(BOOK_ID_KEY, -1); //-1 if not found
+
+            if (bookId != -1){ //2nd check
+                Book incomingBook= Utils.getInstance().getBookById(bookId);
+
+                if (incomingBook != null){ //3rd check
+                    setData(incomingBook);
+                }
+            }//if bookId
+
+        } //if intent
+
+
+
+
+
+    }//onCreate
 
     private void setData(Book book) {
 
@@ -44,13 +71,14 @@ public class BookActivity extends AppCompatActivity {
         txtPages.setText(String.valueOf(book.getPages()));
         txtAuthorName.setText(book.getAuthor());
         shortDescText.setText( book.getShortDesc());
+        longDescText.setText( book.getLongDesc());
 
         //use glide
         Glide.with(this)
                 .asBitmap()
                 .load( book.getImageURL())
                 .into(imgBook);
-    }
+    } //setData
 
     private void initViews() {
 
@@ -72,5 +100,5 @@ public class BookActivity extends AppCompatActivity {
 
 
 
-    }
+    }//init view
 }

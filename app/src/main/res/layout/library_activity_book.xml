@@ -1,160 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="LibraryProject.BookActivity">
 
-    <ImageView
-        android:id="@+id/imgBook2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnAddToCurrentlyReading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Currently Reading"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnAddWantToRead"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="601dp"
-        android:text="Want To Read"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddToCurrentlyReading" />
+            <ImageView
+                android:id="@+id/imgBook2"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="50dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
-        android:id="@+id/btnAddToAlreadyRead"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Already Read"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddWantToRead" />
+            <Button
+                android:id="@+id/btnAddToCurrentlyReading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="Currently Reading"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnAddToFavourites"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Add To Favourites"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddToAlreadyRead" />
+            <Button
+                android:id="@+id/btnAddWantToRead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="601dp"
+                android:text="Want To Read"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toBottomOf="@+id/btnAddToCurrentlyReading" />
 
-    <TextView
-        android:id="@+id/nameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Book Name"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toTopOf="@+id/guideline7" />
+            <Button
+                android:id="@+id/btnAddToAlreadyRead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Already Read"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toBottomOf="@+id/btnAddWantToRead" />
 
-    <TextView
-        android:id="@+id/txtBookName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Town Mall"
-        app:layout_constraintBottom_toBottomOf="@+id/nameText"
-        app:layout_constraintStart_toStartOf="@+id/guideline11"
-        app:layout_constraintTop_toTopOf="@+id/nameText" />
+            <Button
+                android:id="@+id/btnAddToFavourites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Add To Favourites"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toBottomOf="@+id/btnAddToAlreadyRead" />
 
-    <TextView
-        android:id="@+id/authorText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Author"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toBottomOf="@+id/nameText" />
+            <TextView
+                android:id="@+id/nameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Book Name"
+                app:layout_constraintStart_toStartOf="@+id/guideline10"
+                app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
-    <TextView
-        android:id="@+id/txtAuthorName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hasrudi"
-        app:layout_constraintBottom_toBottomOf="@+id/authorText2"
-        app:layout_constraintStart_toStartOf="@+id/guideline11"
-        app:layout_constraintTop_toTopOf="@+id/authorText2" />
+            <TextView
+                android:id="@+id/txtBookName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Town Mall"
+                app:layout_constraintBottom_toBottomOf="@+id/nameText"
+                app:layout_constraintStart_toStartOf="@+id/guideline11"
+                app:layout_constraintTop_toTopOf="@+id/nameText" />
 
-    <TextView
-        android:id="@+id/pagesText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Pages"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toBottomOf="@+id/authorText2" />
+            <TextView
+                android:id="@+id/authorText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Author"
+                app:layout_constraintStart_toStartOf="@+id/guideline10"
+                app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
-    <TextView
-        android:id="@+id/txtPages"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="800"
-        app:layout_constraintBottom_toBottomOf="@+id/pagesText"
-        app:layout_constraintStart_toStartOf="@+id/guideline11"
-        app:layout_constraintTop_toTopOf="@+id/pagesText" />
+            <TextView
+                android:id="@+id/txtAuthorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hasrudi"
+                app:layout_constraintBottom_toBottomOf="@+id/authorText2"
+                app:layout_constraintStart_toStartOf="@+id/guideline11"
+                app:layout_constraintTop_toTopOf="@+id/authorText2" />
 
-    <TextView
-        android:id="@+id/shortDescText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Description"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toBottomOf="@+id/pagesText" />
+            <TextView
+                android:id="@+id/pagesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Pages"
+                app:layout_constraintStart_toStartOf="@+id/guideline10"
+                app:layout_constraintTop_toBottomOf="@+id/authorText2" />
 
-    <TextView
-        android:id="@+id/longDescText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Long Description"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toBottomOf="@+id/shortDescText" />
+            <TextView
+                android:id="@+id/txtPages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="800"
+                app:layout_constraintBottom_toBottomOf="@+id/pagesText"
+                app:layout_constraintStart_toStartOf="@+id/guideline11"
+                app:layout_constraintTop_toTopOf="@+id/pagesText" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="180dp" />
+            <TextView
+                android:id="@+id/shortDescText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Description"
+                app:layout_constraintStart_toStartOf="@+id/guideline10"
+                app:layout_constraintTop_toBottomOf="@+id/pagesText" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="318dp" />
+            <TextView
+                android:id="@+id/longDescText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Long Description"
+                app:layout_constraintStart_toStartOf="@+id/guideline10"
+                app:layout_constraintTop_toBottomOf="@+id/shortDescText" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="180dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="116dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="318dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="116dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

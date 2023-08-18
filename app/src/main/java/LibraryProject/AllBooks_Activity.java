@@ -35,17 +35,8 @@ public class AllBooks_Activity extends AppCompatActivity {
         //create arraylist
         ArrayList<Book> bookArrayList= new ArrayList<>();
 
-        bookArrayList.add(
-                new Book(1, "Lengloi", "Maria", 500,
-                        "https://cdn-shop.ookbee.com/Books/KarangBooks/2016/20161336/Thumbnails/Cover.jpg",
-                        "A horror book", "Long Desc") );
 
-        bookArrayList.add(
-                new Book(2, "Town Mall", "Hasrudi Jawawi", 800,
-                        "https://cdn-shop.ookbee.com/Books/KarangBooks/2017/20170310072714/Thumbnails/Cover.jpg",
-                        "The mall is haunted", "this book is not very scary")   );
-
-        adapter.setBookArrayList(bookArrayList);
+        adapter.setBookArrayList(Utils.getInstance().getAllBooks_List());
 
 
 
