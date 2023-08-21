@@ -107,4 +107,15 @@ public class Utils {
 
         return null;
     }
+
+    //add to the already read list
+    public boolean addTo_AlreadyRead(Book book){
+        return alreadyRead_Books_List.add(book);
+    }
+
+
+    //add to the want to read list
+    public boolean addTo_WantToRead(Book book){
+        return wantToReadBooks_List.add(book);
+    }
 }

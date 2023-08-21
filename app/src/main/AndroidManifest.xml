@@ -15,9 +15,14 @@
         android:theme="@style/AppTheme"
         tools:targetApi="24">
         <activity
-            android:name="LibraryProject.BookActivity"
+            android:name="LibraryProject.WantToRead_Book_Activity"
             android:exported="false" />
-        <!-- main activity dlm app -->
+        <activity
+            android:name="LibraryProject.AlreadyRead_Book_Activity"
+            android:exported="false" />
+        <activity
+            android:name="LibraryProject.BookActivity"
+            android:exported="false" /> <!-- main activity dlm app -->
         <activity
             android:name="LibraryProject.LIbraryApp"
             android:exported="true">
@@ -38,7 +43,7 @@
             android:exported="true" />
         <activity
             android:name=".LearnLayout"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".LearnListView"
             android:exported="true" />

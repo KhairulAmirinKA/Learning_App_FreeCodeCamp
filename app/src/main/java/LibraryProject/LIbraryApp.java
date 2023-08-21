@@ -32,6 +32,20 @@ public class LIbraryApp extends AppCompatActivity {
             }
         });
 
+        //onclick the alreadyRead button
+        btnAlreadyRead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //navigate to AlreadyReadBook Activity
+                Intent intent= new Intent(LIbraryApp.this, AlreadyRead_Book_Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        //get instance
+        Utils.getInstance();
+
 
 
 
