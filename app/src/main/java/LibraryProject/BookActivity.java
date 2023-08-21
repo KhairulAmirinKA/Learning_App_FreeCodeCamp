@@ -66,10 +66,10 @@ public class BookActivity extends AppCompatActivity {
                     handleWantToRead(incomingBook);
 
                     //TODO: handle currently reading
-                    handleCurrentlyReadingBooks(incomingBook);
-
-                    //TODO: handle favorite books
-                    handleFavoriteBooks(incomingBook);
+//                    handleCurrentlyReadingBooks(incomingBook);
+//
+//                    //TODO: handle favorite books
+//                    handleFavoriteBooks(incomingBook);
 
                 }
             }//if bookId
