@@ -43,7 +43,35 @@ public class LIbraryApp extends AppCompatActivity {
             }
         });
 
+
+        //onclick currently read btn
+        btnCurrentlyRead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //navigate to currentlyRead Book Activity
+                Intent intent= new Intent(LIbraryApp.this, CurrentlyRead_Book_Activity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        //onclick the favorite btn
+        btnFavBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //navigate to fav Book Activity
+                Intent intent= new Intent(LIbraryApp.this, Favorite_Book_Activity.class);
+                startActivity(intent);
+            }
+        });
+
+
         //get instance
+         /*need to include Utils.getInstance in LibraryApp.java.
+        otherwise, just use Utils.getInstance().getAlreadyRead_Books_List()
+         */
         Utils.getInstance();
 
 

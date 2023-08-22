@@ -59,6 +59,16 @@ public class Utils {
                 new Book(2, "Town Mall", "Hasrudi Jawawi", 800,
                         "https://cdn-shop.ookbee.com/Books/KarangBooks/2017/20170310072714/Thumbnails/Cover.jpg",
                         "The mall is haunted", "this book is not very scary")   );
+
+        allBooks_List.add(
+                new Book(3, "Barongan", "Naim Tamdjis", 400,
+                        "https://cdn-shop.ookbee.com/Books/KarangBooks/2021/2021018/Thumbnails/Cover.jpg",
+                        "The mask is haunted", "LOve this book")  );
+
+        allBooks_List.add(
+                new Book(4, "Kakak Kemboja", "Naim Tamdjis", 330,
+                        "https://cdn-shop.ookbee.com/Books/KarangBooks/2017/20170331025438/Thumbnails/Cover.jpg",
+                        "A mysterious companion", "Story line is well written")   );
     }
 
 
@@ -117,5 +127,15 @@ public class Utils {
     //add to the want to read list
     public boolean addTo_WantToRead(Book book){
         return wantToReadBooks_List.add(book);
+    }
+
+    //add to the currently read list
+    public boolean addTo_CurrentlyRead(Book book){
+        return currentlyReadingBooks_List.add(book);
+    }
+
+    //add to the favorite list
+    public boolean addTo_Favorite(Book book){
+        return favoriteBooks_List.add(book);
     }
 }

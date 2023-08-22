@@ -63,5 +63,6 @@
     </string>
 
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_currently_read_book">CurrentlyRead_Book_Activity</string>
 
 </resources>
