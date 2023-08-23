@@ -118,6 +118,11 @@ public class Utils {
         return null;
     }
 
+    /**
+     * add book to the list
+     * @param book
+     * @return
+     */
     //add to the already read list
     public boolean addTo_AlreadyRead(Book book){
         return alreadyRead_Books_List.add(book);
@@ -138,4 +143,29 @@ public class Utils {
     public boolean addTo_Favorite(Book book){
         return favoriteBooks_List.add(book);
     }
+
+    /**
+     * Remove book from list
+     */
+    //remove from alreadyRead
+    public boolean removeFrom_AlreadyRead(Book book){
+        return alreadyRead_Books_List.remove(book);
+    }
+
+    //remove from want to read
+    public boolean removeFrom_WantToRead(Book book){
+        return wantToReadBooks_List.remove(book);
+    }
+
+    //remove from currently read
+    public boolean removeFrom_CurrentlyRead(Book book){
+        return currentlyReadingBooks_List.remove(book);
+    }
+
+    //remove from favorite book
+    public boolean removeFrom_FavoriteBook(Book book){
+        return favoriteBooks_List.remove(book);
+    }
+
+
 }

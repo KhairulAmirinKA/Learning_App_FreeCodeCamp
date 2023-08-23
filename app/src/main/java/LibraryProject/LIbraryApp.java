@@ -67,6 +67,17 @@ public class LIbraryApp extends AppCompatActivity {
             }
         });
 
+        //onclick the wishlist
+        btnWishList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //navigate to want to read Book Activity
+                Intent intent= new Intent(LIbraryApp.this, WantToRead_Book_Activity.class);
+                startActivity(intent);
+            }
+        });
+
 
         //get instance
          /*need to include Utils.getInstance in LibraryApp.java.
