@@ -37,7 +37,7 @@ public class Favorite_Book_Activity extends AppCompatActivity {
     public void onBackPressed() {
 
         //navigate to the main activity when back btn is pressed
-        Intent intent = new Intent(this, LIbraryApp.class);
+        Intent intent = new Intent(this, LibraryApp.class);
 
         //at main activity, user will quit app when he clicks back btn
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
