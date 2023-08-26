@@ -1,7 +1,9 @@
 package LibraryProject;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +21,13 @@ public class AllBooks_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.library_activity_all_books); //link dgn xml
+
+        //transition
+        //overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+
+        //enable up button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         //create adapter
         adapter= new BookRecViewAdapter(this, "allBooks");
@@ -42,7 +51,31 @@ public class AllBooks_Activity extends AppCompatActivity {
 
 
 
+    } //onCreate
+
+
+    //back button in the menu bar
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case android.R.id.home:
+                onBackPressed(); //similar to back btn below
+                break;
+
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
-
+    //when user clicks Back btn
+//    @Override
+//    public void finish() {
+//        super.finish();
+//
+//        //transition
+//        overridePendingTransition(R.anim.slide_out, R.anim.slide_in);
+//    }
 }

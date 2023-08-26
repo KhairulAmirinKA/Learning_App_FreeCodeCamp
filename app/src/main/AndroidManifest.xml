@@ -14,24 +14,39 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="24">
+
+        <activity
+            android:name="LibraryProject.AllBooks_Activity"
+            android:exported="false"
+            android:label="@string/activity_all_books"/>
+
         <activity
             android:name="LibraryProject.Website_Activity"
             android:exported="false" />
+
         <activity
             android:name="LibraryProject.Favorite_Book_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/activity_favorite_books"/>
+
         <activity
             android:name="LibraryProject.CurrentlyRead_Book_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/activity_currently_reading"/>
         <activity
             android:name="LibraryProject.WantToRead_Book_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/activity_want_to_read"/>
         <activity
             android:name="LibraryProject.AlreadyRead_Book_Activity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/activity_want_to_read"/>
         <activity
             android:name="LibraryProject.BookActivity"
-            android:exported="false" /> <!-- main activity dlm app -->
+            android:exported="false"
+            android:label="@string/activity_book"/>
+
+        <!-- main activity dlm app -->
         <activity
             android:name="LibraryProject.LibraryApp"
             android:exported="true">
@@ -40,7 +55,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- main activity -->
+        </activity>
+
+        <!-- main activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true" /> <!-- learn ui -->
@@ -83,9 +100,7 @@
         <activity
             android:name="Challenge.UI_Challenge1"
             android:exported="true" />
-        <activity
-            android:name="LibraryProject.AllBooks_Activity"
-            android:exported="true" />
+
     </application>
 
 </manifest>
