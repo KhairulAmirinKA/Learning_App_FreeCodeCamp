@@ -3,24 +3,11 @@ package LibraryProject;
 //quite similar to database
 //create singleton
 
-import android.content.Context;
-import android.content.SharedPreferences;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class Utils {
+public class Utils_Without_SharedPreferences {
 
-    //const
-    private static final String ALL_BOOKS_KEY= "all_books";
-
-    private static Utils instance;
-    
-    //sharedPreferences
-    private SharedPreferences sharedPreferences;
+    private static Utils_Without_SharedPreferences instance;
 
     //arrayList
     private static ArrayList<Book> allBooks_List;
@@ -29,14 +16,13 @@ public class Utils {
     private static ArrayList<Book> currentlyReadingBooks_List;
     private static ArrayList<Book> favoriteBooks_List;
 
-    private Utils(Context context) { //constructor
-        
-        sharedPreferences= context.getSharedPreferences("alternate_db", Context.MODE_PRIVATE);
+    private Utils_Without_SharedPreferences() { //constructor
 
         //all books
-        if (getAllBooks_List() == null){
+        if (allBooks_List == null){
+            allBooks_List= new ArrayList<>();
 
-            init_BookData(); //init if the data is null
+            init_BookData();
         }
 
         //already read
@@ -64,68 +50,44 @@ public class Utils {
     private void init_BookData() {
 
         //TODO: add initial data
-        
-        ArrayList<Book> books= new ArrayList<>();
-        
-        books.add(
+        allBooks_List.add(
                 new Book(1, "Lengloi", "Maria", 500,
                         "https://cdn-shop.ookbee.com/Books/KarangBooks/2016/20161336/Thumbnails/Cover.jpg",
                         "A horror book", "Long Desc") );
 
-        books.add(
+        allBooks_List.add(
                 new Book(2, "Town Mall", "Hasrudi Jawawi", 800,
                         "https://cdn-shop.ookbee.com/Books/KarangBooks/2017/20170310072714/Thumbnails/Cover.jpg",
                         "The mall is haunted", "this book is not very scary")   );
 
-        books.add(
+        allBooks_List.add(
                 new Book(3, "Barongan", "Naim Tamdjis", 400,
                         "https://cdn-shop.ookbee.com/Books/KarangBooks/2021/2021018/Thumbnails/Cover.jpg",
                         "The mask is haunted", "LOve this book")  );
 
-        books.add(
+        allBooks_List.add(
                 new Book(4, "Kakak Kemboja", "Naim Tamdjis", 330,
                         "https://cdn-shop.ookbee.com/Books/KarangBooks/2017/20170331025438/Thumbnails/Cover.jpg",
                         "A mysterious companion", "Story line is well written")   );
-
-        //editor
-        SharedPreferences.Editor editor= sharedPreferences.edit();
-
-        //gson
-        Gson gson= new Gson();
-
-        editor.putString(ALL_BOOKS_KEY, gson.toJson(books)  );
-
-        editor.commit();
-
-
     }
 
 
     //get instance
-    public static Utils getInstance(Context context) {
+    public static Utils_Without_SharedPreferences getInstance() {
 
         if (instance!= null){
             return instance;
         }
 
         else {
-            instance = new Utils(context);
+            instance = new Utils_Without_SharedPreferences();
             return instance;
         }
     }
 
     //getters
-    public ArrayList<Book> getAllBooks_List() {
-
-        Gson gson= new Gson();
-
-        Type type = new TypeToken< ArrayList<Book>>(){}.getType();
-
-        ArrayList<Book> books= gson.fromJson(sharedPreferences
-                .getString(ALL_BOOKS_KEY, null),
-                type);
-
-        return books;
+    public static ArrayList<Book> getAllBooks_List() {
+        return allBooks_List;
     }
 
     public static ArrayList<Book> getAlreadyRead_Books_List() {
