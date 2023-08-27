@@ -16,6 +16,11 @@ public class Utils {
 
     //const
     private static final String ALL_BOOKS_KEY= "all_books";
+    private static final String ALREADY_READ_BOOKS_KEY="already_read_books";
+    private static final String WANT_TO_READ_BOOKS_KEY="want_to_read_books";
+    private static final String CURRENTLY_READING_BOOKS_KEY="currently_reading_books";
+    private static final String FAVORITE_BOOKS_KEY="favorite_books";
+
 
     private static Utils instance;
     
@@ -39,24 +44,46 @@ public class Utils {
             init_BookData(); //init if the data is null
         }
 
+        //editor
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+
+        //gson
+        Gson gson= new Gson();
+
         //already read
-        if (alreadyRead_Books_List == null){
-            alreadyRead_Books_List= new ArrayList<>();
+        if (getAlreadyRead_Books_List() == null){
+
+            editor.putString(ALREADY_READ_BOOKS_KEY,
+                    gson.toJson( new ArrayList<Book>()  )   );
+
+            editor.commit();
+
         }
 
         //want to read
-        if (wantToReadBooks_List == null){
-            wantToReadBooks_List= new ArrayList<>();
+        if (getWantToReadBooks_List() == null){
+
+            editor.putString(WANT_TO_READ_BOOKS_KEY,
+                    gson.toJson( new ArrayList<Book>()));
+
+            editor.commit();
         }
 
         //currently reading
-        if (currentlyReadingBooks_List == null){
-            currentlyReadingBooks_List= new ArrayList<>();
+        if (getCurrentlyReadingBooks_List() == null){
+
+            editor.putString(CURRENTLY_READING_BOOKS_KEY,
+                    gson.toJson( new ArrayList<Book>()));
+
+            editor.commit();
+
         }
 
         //favorite book
-        if (favoriteBooks_List== null){
-            favoriteBooks_List= new ArrayList<>();
+        if (getFavoriteBooks_List()== null){
+            editor.putString(FAVORITE_BOOKS_KEY, gson.toJson(new ArrayList<Book>()));
+
+            editor.commit();
         }
     }
 
@@ -128,28 +155,69 @@ public class Utils {
         return books;
     }
 
-    public static ArrayList<Book> getAlreadyRead_Books_List() {
-        return alreadyRead_Books_List;
+    public ArrayList<Book> getAlreadyRead_Books_List() {
+
+        Gson gson= new Gson();
+
+        Type type= new TypeToken<ArrayList<Book>>(){}.getType();
+
+        ArrayList<Book> books= gson.fromJson(sharedPreferences
+                .getString(ALREADY_READ_BOOKS_KEY, null), //null is default value
+                type);
+
+        return books;
     }
 
-    public static ArrayList<Book> getWantToReadBooks_List() {
-        return wantToReadBooks_List;
+    public ArrayList<Book> getWantToReadBooks_List() {
+
+        Gson gson= new Gson();
+
+        Type type= new TypeToken< ArrayList<Book>>(){}.getType();
+
+        ArrayList<Book> books= gson.fromJson(sharedPreferences
+                .getString(WANT_TO_READ_BOOKS_KEY, null),
+                type);
+
+        return books;
     }
 
-    public static ArrayList<Book> getCurrentlyReadingBooks_List() {
-        return currentlyReadingBooks_List;
+    public ArrayList<Book> getCurrentlyReadingBooks_List() {
+
+        Gson gson= new Gson();
+
+        Type type= new TypeToken< ArrayList<Book>>(){}.getType();
+
+        ArrayList<Book> books= gson.fromJson(sharedPreferences
+                .getString(CURRENTLY_READING_BOOKS_KEY , null),
+                type);
+
+        return books;
     }
 
-    public static ArrayList<Book> getFavoriteBooks_List() {
-        return favoriteBooks_List;
+    public  ArrayList<Book> getFavoriteBooks_List() {
+
+        Gson gson= new Gson();
+
+        Type type= new TypeToken< ArrayList<Book>>(){}.getType();
+
+        ArrayList<Book> books= gson.fromJson(sharedPreferences
+                .getString(FAVORITE_BOOKS_KEY, null),
+                type);
+
+        return books ;
     }
 
-    //get book by id
+    //get book from shared preferences by id
     public Book getBookById(int id){
 
-        for (Book book: allBooks_List){
-            if (book.getId()== id){
-                return book;
+        ArrayList<Book> books_from_sharedPreferences= getAllBooks_List();
+
+        if (books_from_sharedPreferences != null){
+
+            for (Book book: books_from_sharedPreferences){
+                if (book.getId()== id){
+                    return book;
+                }
             }
         }
 
@@ -163,23 +231,108 @@ public class Utils {
      */
     //add to the already read list
     public boolean addTo_AlreadyRead(Book book){
-        return alreadyRead_Books_List.add(book);
+
+        ArrayList<Book> alreadyReadBooks_List= getAlreadyRead_Books_List();
+
+        if (alreadyReadBooks_List!= null){
+
+            if (alreadyReadBooks_List.add(book)){ //add to the array list
+
+                Gson gson= new Gson();
+
+                SharedPreferences.Editor editor= sharedPreferences.edit();
+
+                //removes the old entry for the already read books from shared preferences.
+                editor.remove(ALREADY_READ_BOOKS_KEY);
+
+                //adds the updated list of already read books as a JSON string to the shared preferences.
+                editor.putString(ALREADY_READ_BOOKS_KEY, gson.toJson(alreadyReadBooks_List));
+
+                //This commits the changes made to the shared preferences.
+                editor.commit();
+
+                return true;
+            }
+        }
+
+        return false;
     }
 
 
     //add to the want to read list
     public boolean addTo_WantToRead(Book book){
-        return wantToReadBooks_List.add(book);
+
+        ArrayList<Book> wantToReadBooks_List= getWantToReadBooks_List();
+
+        if (wantToReadBooks_List!= null){
+
+            if (wantToReadBooks_List.add(book)){
+
+                Gson gson= new Gson();
+
+                SharedPreferences.Editor editor= sharedPreferences.edit();
+
+                //remove old entry
+                editor.remove(WANT_TO_READ_BOOKS_KEY);
+
+                //update entry
+                editor.putString(WANT_TO_READ_BOOKS_KEY, gson.toJson(wantToReadBooks_List));
+
+                editor.commit();
+
+                return true;
+            }
+        }
+        return false;
     }
 
     //add to the currently read list
     public boolean addTo_CurrentlyRead(Book book){
-        return currentlyReadingBooks_List.add(book);
+
+        ArrayList<Book> currentlyReadBooks_List= getCurrentlyReadingBooks_List();
+
+        if (currentlyReadBooks_List != null){
+
+            //add to the array list
+            if (currentlyReadBooks_List.add(book)){
+
+                Gson gson= new Gson();
+
+                SharedPreferences.Editor editor= sharedPreferences.edit();
+
+                editor.remove(CURRENTLY_READING_BOOKS_KEY);
+
+                editor.putString(CURRENTLY_READING_BOOKS_KEY, gson.toJson(currentlyReadBooks_List));
+
+                return true;
+            }
+        }
+
+        return false;
     }
 
     //add to the favorite list
     public boolean addTo_Favorite(Book book){
-        return favoriteBooks_List.add(book);
+
+        ArrayList<Book> favoriteBooks_List= getFavoriteBooks_List();
+
+        if (favoriteBooks_List!= null){
+
+            //add to the array list
+            if (favoriteBooks_List.add(book)){
+
+                Gson gson= new Gson();
+
+                SharedPreferences.Editor editor= sharedPreferences.edit();
+
+                editor.remove(FAVORITE_BOOKS_KEY);
+
+                editor.putString(FAVORITE_BOOKS_KEY, gson.toJson(favoriteBooks_List));
+
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
