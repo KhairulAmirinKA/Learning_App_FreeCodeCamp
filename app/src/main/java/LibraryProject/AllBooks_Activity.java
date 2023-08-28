@@ -44,7 +44,7 @@ public class AllBooks_Activity extends AppCompatActivity {
         ArrayList<Book> bookArrayList= new ArrayList<>();
 
 
-        adapter.setBookArrayList(Utils.getInstance().getAllBooks_List());
+        adapter.setBookArrayList(Utils.getInstance(this).getAllBooks_List());
 
 
 
@@ -61,7 +61,7 @@ public class AllBooks_Activity extends AppCompatActivity {
         switch (item.getItemId()){
 
             case android.R.id.home:
-                onBackPressed(); //similar to back btn below
+                onBackPressed(); //similar to back btn bottom of screen.
                 break;
 
             default:

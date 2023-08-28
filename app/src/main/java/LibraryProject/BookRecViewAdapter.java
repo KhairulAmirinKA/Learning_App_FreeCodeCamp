@@ -128,7 +128,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
 
-                                if (Utils.getInstance().removeFrom_AlreadyRead( bookArrayList.get(position) ) ){
+                                if (Utils.getInstance(mContext).removeFrom_AlreadyRead( bookArrayList.get(position) ) ){
 
                                     Toast.makeText(mContext, bookName+" removed", Toast.LENGTH_SHORT).show();
 
@@ -178,7 +178,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
                             @Override //clicks yes
                             public void onClick(DialogInterface dialogInterface, int i) {
 
-                                if (Utils.getInstance().removeFrom_WantToRead( bookArrayList.get(position) ) ){
+                                if (Utils.getInstance(mContext).removeFrom_WantToRead( bookArrayList.get(position) ) ){
 
                                     Toast.makeText(mContext, bookName+" removed", Toast.LENGTH_SHORT).show();
                                     notifyDataSetChanged();
@@ -232,7 +232,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
 
-                                if (Utils.getInstance().removeFrom_CurrentlyRead(bookArrayList.get(position)) ){
+                                if (Utils.getInstance(mContext).removeFrom_CurrentlyRead(bookArrayList.get(position)) ){
 
                                     Toast.makeText(mContext, bookName+" removed", Toast.LENGTH_SHORT).show();
 
@@ -283,7 +283,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
 
-                                if (Utils.getInstance().removeFrom_FavoriteBook(bookArrayList.get(position) ) ){
+                                if (Utils.getInstance(mContext).removeFrom_FavoriteBook(bookArrayList.get(position) ) ){
 
                                     Toast.makeText(mContext, bookName+" removed", Toast.LENGTH_SHORT).show();
 

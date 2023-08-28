@@ -130,7 +130,7 @@ public class LibraryApp extends AppCompatActivity {
          /*need to include Utils.getInstance in LibraryApp.java.
         otherwise, just use Utils.getInstance().getAlreadyRead_Books_List()
          */
-        Utils.getInstance();
+        Utils.getInstance(this);
 
 
 

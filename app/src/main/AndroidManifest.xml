@@ -40,7 +40,7 @@
         <activity
             android:name="LibraryProject.AlreadyRead_Book_Activity"
             android:exported="false"
-            android:label="@string/activity_want_to_read"/>
+            android:label="@string/activity_already_read"/>
         <activity
             android:name="LibraryProject.BookActivity"
             android:exported="false"
